@@ -16,9 +16,9 @@ import java.util.Stack;
 public class SchemaDAGVisitor implements DAG.Visitor
 {
   private DAG dag;
-  private Map<DAG.OperatorMeta, OperatorSchemaInfo> processedOperators = new HashMap<>();
-  private TupleSchemaRegistry schemaRegistry = new TupleSchemaRegistry();
-  private String schemaJarPath;
+  private transient Map<DAG.OperatorMeta, OperatorSchemaInfo> processedOperators = new HashMap<>();
+  private transient TupleSchemaRegistry schemaRegistry = new TupleSchemaRegistry();
+  private transient String schemaJarPath;
 
   public void preVisitDAG(DAG dag)
   {
@@ -136,8 +136,8 @@ public class SchemaDAGVisitor implements DAG.Visitor
 
   private class OperatorSchemaInfo
   {
-    public Map<DAG.InputPortMeta, Schema> inputPortSchema = new HashMap<>();
-    public Map<DAG.OutputPortMeta, Schema> outputPortSchema = new HashMap<>();
+    public transient Map<DAG.InputPortMeta, Schema> inputPortSchema = new HashMap<>();
+    public transient Map<DAG.OutputPortMeta, Schema> outputPortSchema = new HashMap<>();
   }
 
   @VisibleForTesting
