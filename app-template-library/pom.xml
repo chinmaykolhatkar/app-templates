@@ -104,12 +104,6 @@
       <version>4.3</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>apex-api</artifactId>
-      <version>3.6.0-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
 
     <!-- For Tests -->
     <dependency>

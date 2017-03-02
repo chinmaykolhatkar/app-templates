@@ -21,6 +21,7 @@ import java.util.Map;
 
 public class SchemaDAGVisitorTest
 {
+
   @Test
   public void testSchema()
   {
@@ -42,7 +43,7 @@ public class SchemaDAGVisitorTest
     LogicalPlan.StreamMeta middle_console = dag.addStream("middle_console", middle.out1, console.input);
 
     SchemaDAGVisitor schemaDAGVisitor = new SchemaDAGVisitor();
-    dag.setAttribute(Context.DAGContext.VISITORS, Arrays.asList(new DAG.Visitor[]{schemaDAGVisitor}));
+    dag.setAttribute(Context.DAGContext.VISITORS, Arrays.asList(new Visitor[]{schemaDAGVisitor}));
     dag.visitDAG();
     dag.validate();
 

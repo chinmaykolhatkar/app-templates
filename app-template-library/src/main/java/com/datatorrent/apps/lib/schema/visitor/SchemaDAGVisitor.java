@@ -3,6 +3,7 @@ package com.datatorrent.apps.lib.schema.visitor;
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.Operator;
+import com.datatorrent.api.Visitor;
 import com.datatorrent.apps.lib.schema.api.Schema;
 import com.datatorrent.apps.lib.schema.api.SchemaAware;
 import com.datatorrent.apps.lib.schema.util.TupleSchemaRegistry;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-public class SchemaDAGVisitor implements DAG.Visitor
+public class SchemaDAGVisitor implements Visitor
 {
   private DAG dag;
   private transient Map<DAG.OperatorMeta, OperatorSchemaInfo> processedOperators = new HashMap<>();

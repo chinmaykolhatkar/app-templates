@@ -40,7 +40,7 @@ import com.datatorrent.contrib.parser.CsvParser;
 import com.datatorrent.lib.filter.FilterOperator;
 import com.datatorrent.lib.transform.TransformOperator;
 
-@ApplicationAnnotation(name = "Kafka-to-HDFS-Filter")
+@ApplicationAnnotation(name = "Schema-Aware-Filter-App")
 public class Application implements StreamingApplication
 {
 
